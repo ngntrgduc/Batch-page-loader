@@ -19,15 +19,15 @@ function isLink(line) {
 function openTabsInGroup(group) {
     let links = group.getElementsByTagName('a');
     for (link of links) {
-        chrome.tabs.create({ url: link.href });
+        browser.tabs.create({ url: link.href });
     }
 }
 
 container = document.getElementById("main")
 
-chrome.storage.local.get('links', function(data) {
+browser.storage.local.get('links', function(data) {
     if (!data.links) {
-        chrome.runtime.openOptionsPage();
+        browser.runtime.openOptionsPage();
     } else {
         let i = 0;
         while (i < data.links.length) {

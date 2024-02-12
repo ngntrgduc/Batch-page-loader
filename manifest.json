@@ -5,7 +5,8 @@
     "manifest_version": 3,
     "action": {
         "default_title": "Batch page loader",
-        "default_icon": "icons/loading.png"
+        "default_icon": "icons/loading.png",
+        "default_popup": "index.html"
     },
     "icons": {
         "16": "icons/loading.png",
@@ -27,7 +28,9 @@
         "tabs",
         "storage"
     ],
-    "background": {
-        "service_worker": "background.js"
+	    "browser_specific_settings": {
+        "gecko": {
+          "id": "ngntrgduc@BatchPageLoader"
+        }
     }
 }

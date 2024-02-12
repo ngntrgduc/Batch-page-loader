@@ -1,5 +1,5 @@
 function loadOptions() {
-    chrome.storage.local.get('links', function(data) {
+    browser.storage.local.get('links', function(data) {
         if (data.links) {
             document.getElementById("options").value = data.links.join("\n");
         }
@@ -26,7 +26,7 @@ document.getElementById("button").addEventListener("click", () => {
     let links = getLinks();
 
     // Set new links on local storage
-    chrome.storage.local.set({
+    browser.storage.local.set({
         'links': links
     }, () => console.log('Links were saved.'));
 

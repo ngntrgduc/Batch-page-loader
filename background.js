@@ -1,5 +1,5 @@
-chrome.action.onClicked.addListener(function (tab) {
-    chrome.tabs.create({ 
-        url: chrome.runtime.getURL("index.html") 
+browser.action.onClicked.addListener(function(tab) {
+    browser.tabs.create({ 
+        url: browser.runtime.getURL("index.html") 
     });
 });
