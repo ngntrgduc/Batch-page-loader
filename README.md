@@ -1,4 +1,4 @@
-# Batch page loader ![](https://img.shields.io/github/manifest-json/v/ngntrgduc/Batch-page-loader?style=flat-square)
+# Multiple links loader ![](https://img.shields.io/github/manifest-json/v/ngntrgduc/Multiple-links-loader?style=flat-square)
 Open multiple links in a flash ⚡.
 
 ## What is this?
@@ -47,7 +47,7 @@ Outlook | https://outlook.office.com/mail/
 ```
 
 ## Todo
-- [ ] Find a new icon with more size
+- [x] Find a new icon with more size
 
 ## Contributing
 If you found a bug or want to contribute, feel free to open an issue/pull requests. All contributions are welcomed.

@@ -1,16 +1,16 @@
 {
-    "name": "Batch page loader",
-    "version": "0.1",
+    "name": "Multiple links loader",
+    "version": "0.1.0",
     "description": "Open multiple links in a flash",
     "manifest_version": 3,
     "action": {
-        "default_title": "Batch page loader",
+        "default_title": "Multiple links loader",
         "default_icon": "icons/loading.png"
     },
     "icons": {
-        "16": "icons/loading.png",
-        "48": "icons/loading.png",
-       "128": "icons/loading.png" 
+        "16": "icons/loading16.png",
+        "48": "icons/loading32.png",
+       "128": "icons/loading128.png" 
     },
     "commands": {
         "_execute_action": {
