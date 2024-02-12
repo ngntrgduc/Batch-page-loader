@@ -8,17 +8,17 @@ A picture is worth a thousand words:
 |:---:|:---:|
 |![](/images/page.png) | ![](/images/options.png) |
 
-This extension can open link when you click on it and multiple links when you click on the group name. Time-saver.
+This extension can open a link when you click on it and multiple links when you click on the group name. Time-saver.
 
 ## How to use
-Open the extension's Options page, paste your link with the following format:
+Open the extension's Options page, and paste your link with the following format:
 
 ```
 <name> | <link>
 ```
 
 When you want to open the link, click on the name of it.
-If you want to group multiple links together, put the group name in the following format:
+If you want to group multiple links, put the group name in the following format:
 
 ```
 # <group name>
@@ -26,7 +26,7 @@ If you want to group multiple links together, put the group name in the followin
 
 and after that, put links under the group name
 
-Here is the basic options:
+Here are the basic options:
 
 ```
 # Social
@@ -47,11 +47,10 @@ Outlook | https://outlook.office.com/mail/
 ```
 
 ## Todo
-- [ ] Find new icon with more size
-- [ ] 
+- [ ] Find a new icon with more size
 
 ## Contributing
-If you found a bug or want to contribute, feel free to open a issue/pull requests. All contributions are welcomed.
+If you found a bug or want to contribute, feel free to open an issue/pull requests. All contributions are welcomed.
 
 ## Coffee
 If you like this project and you want to support me, you can [buy me a coffee :coffee:](https://ko-fi.com/ngntrgduc). Thank you very much 💖.
