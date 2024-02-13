@@ -1,56 +1,19 @@
-# Multiple links loader ![](https://img.shields.io/github/manifest-json/v/ngntrgduc/Multiple-links-loader?style=flat-square)
-Open multiple links in a flash ⚡.
+# Installation
 
-## What is this?
-A picture is worth a thousand words:
+Extension available on [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/multiple-links-loader/).
 
-| Start page | Options page |
-|:---:|:---:|
-|![](/images/page.png) | ![](/images/options.png) |
+## Install from source
+1. Clone this repository/[download zip](https://github.com/ngntrgduc/Multiple-page-loader/archive/refs/heads/firefox.zip) and extract to a folder on your local machine.
 
-This extension can open a link when you click on it and multiple links when you click on the group name. Time-saver.
-
-## How to use
-Open the extension's Options page, and paste your link with the following format:
-
-```
-<name> | <link>
+```git
+git clone --single-branch -b firefox https://github.com/ngntrgduc/Multiple-links-loader.git
 ```
 
-When you want to open the link, click on the name of it.
-If you want to group multiple links, put the group name in the following format:
+2. Load extension on Firefox:
+Go to `about:debugging`, click `Load Temporary Add-on...`, then select `manifest.json` of the folder you have just cloned/downloaded.
 
-```
-# <group name>
-```
+3. 
+   - Make the extension more visible by `Pin to Toolbar`. 
+   - Change shortcut if needed.
 
-and after that, put links under the group name
-
-Here are the basic options:
-
-```
-# Social
-Discord | https://discord.com/channels/@me
-Mathstodon | https://mathstodon.xyz/
-LinkedIn | https://www.linkedin.com/notifications/
-Twitter | https://twitter.com/home
-
-# News
-GitHub trending | https://github.com/trending
-Papers with code | https://paperswithcode.com/
-Hacker News | https://news.ycombinator.com/best
-The Verge | https://www.theverge.com/
-
-# Mailing
-Gmail | https://mail.google.com/mail/u/0/#inbox
-Outlook | https://outlook.office.com/mail/
-```
-
-## Todo
-- [x] Find a new icon with more size
-
-## Contributing
-If you found a bug or want to contribute, feel free to open an issue/pull requests. All contributions are welcomed.
-
-## Coffee
-If you like this project and you want to support me, you can [buy me a coffee :coffee:](https://ko-fi.com/ngntrgduc). Thank you very much 💖.
+4. Enjoy ✨. 
