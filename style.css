@@ -9,7 +9,7 @@
 
 html {
     background-color: var(--bg);
-    font-size: 20px;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -31,7 +31,7 @@ body {
 p {
     margin-top: 30px;
     margin-bottom: 10px;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     color: var(--group-color);
     transition-duration: 0.5s;
