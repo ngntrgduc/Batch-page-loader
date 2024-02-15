@@ -51,7 +51,7 @@ Outlook | https://outlook.office.com/mail/
 - [ ] Improve README
 - [ ] Comment feature in textarea
 - [ ] Add settings button on main page
-- [ ] Add shortcut to open options page
+- [x] Add shortcut to open options page
 
 ## Contributing
 If you found a bug or want to contribute, feel free to open an issue/pull requests. All contributions are welcomed.
