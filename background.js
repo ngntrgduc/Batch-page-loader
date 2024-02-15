@@ -10,5 +10,4 @@ browser.commands.onCommand.addListener((command) => {
             url: browser.runtime.getURL("options/options.html") 
         });
     }
-  });
-  
+});
