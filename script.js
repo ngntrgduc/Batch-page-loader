@@ -1,7 +1,7 @@
 function addLink(groupLinks, line) {
     // The line have format: <name> | <link>
     let name = line.split('|')[0].trim();
-    let url  = line.split('|')[1].trim();
+    let url = line.split('|')[1].trim();
     let link = document.createElement('a');
     link.href = url;
     link.textContent = name;
@@ -17,15 +17,18 @@ function isLink(line) {
 }
 
 function openTabsInGroup(group) {
-    let links = group.getElementsByTagName('a');
-    for (link of links) {
-        chrome.tabs.create({ url: link.href });
-    }
+    const links = Array.from(group.getElementsByTagName('a'));
+    const delay = 1000; // delay in milliseconds
+    links.forEach((link, index) => {
+        setTimeout(() => {
+            chrome.tabs.create({ url: link.href });
+        }, index * delay);
+    });
 }
 
-container = document.getElementById("main")
+container = document.getElementById('main')
 
-chrome.storage.local.get('links', function(data) {
+chrome.storage.local.get('links', (data) => {
     if (!data.links) {
         chrome.runtime.openOptionsPage();
     } else {
@@ -34,13 +37,13 @@ chrome.storage.local.get('links', function(data) {
             let line = data.links[i];
     
             if (isGroupName(line)) {
-                let group = document.createElement("div");
-                group.classList.add("group");
+                let group = document.createElement('div');
+                group.classList.add('group');
 
-                let groupLinks = document.createElement("div");
-                groupLinks.classList.add("group-links");
+                let groupLinks = document.createElement('div');
+                groupLinks.classList.add('group-links');
                 
-                let groupName = document.createElement("p");
+                let groupName = document.createElement('p');
                 groupName.textContent = line.slice(1).trim();
                 groupName.onclick = () => openTabsInGroup(group);
                 group.appendChild(groupName);
