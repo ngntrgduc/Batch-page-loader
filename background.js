@@ -1,14 +1,13 @@
-browser.action.onClicked.addListener(function(tab) {
+browser.action.onClicked.addListener(() => {
     browser.tabs.create({ 
-        url: browser.runtime.getURL("index.html") 
+        url: browser.runtime.getURL('index.html') 
     });
 });
 
 browser.commands.onCommand.addListener((command) => {
-    if (command === "open-options") {
+    if (command === 'open-options') {
         browser.tabs.create({ 
-            url: browser.runtime.getURL("options/options.html") 
+            url: browser.runtime.getURL('options/options.html') 
         });
     }
-  });
-  
+});
