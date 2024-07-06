@@ -1,7 +1,7 @@
 function loadOptions() {
-    chrome.storage.local.get('links', function(data) {
+    chrome.storage.local.get('links', (data) => {
         if (data.links) {
-            document.getElementById("options").value = data.links.join("\n");
+            document.getElementById('options').value = data.links.join('\n');
         }
     });
 }
@@ -12,16 +12,16 @@ function formatLink(link) {
 
 function getLinks() {
     let links = [];
-    let rawLinks = document.getElementById("options").value.split("\n");
-    for (link of rawLinks) {
+    let rawLinks = document.getElementById('options').value.split('\n');
+    for (let link of rawLinks) {
         // console.log(link, link.length);
         links.push(formatLink(link));
     }
     return links;
 }
 
-document.getElementById("button").addEventListener("click", () => {
-    document.getElementById("button").innerText = "Saved";
+document.getElementById('button').addEventListener('click', () => {
+    document.getElementById('button').innerText = 'Saved';
 
     let links = getLinks();
 
@@ -35,8 +35,8 @@ document.getElementById("button").addEventListener("click", () => {
 });
 
 // Change button text when user type in textarea
-document.getElementById("options").addEventListener("input", () => {
-    document.getElementById("button").innerText = "Save";
+document.getElementById('options').addEventListener('input', () => {
+    document.getElementById('button').innerText = 'Save';
 });
 
 // Open options page
