@@ -3,68 +3,55 @@
     --link-color: #cdd6f4;
     --group-color:  #89b4fa;
     --hover-link: #f38ba8;
-    --hover-group: #89dceb;
-    --border: #b4befe;
 }
 
 html {
     background-color: var(--bg);
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
 }
 
 body {
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
 #main {
     width: 700px;
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: center;
     min-height: 97vh;
+    overflow: hidden;
 }
 
 p {
-    margin-top: 30px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    text-align: center;
+    font-size: 1.2em;
+    margin-top: 1.4em;
+    margin-bottom: 0.4em;
     color: var(--group-color);
-    transition-duration: 0.5s;
-}
-
-p:hover {
-    color: var(--hover-link);
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 a {
     text-decoration: none;
     color: var(--link-color);
-    transition-duration: 0.5s;
 }
 
-a:visited { text-decoration: none; }
-a:focus { text-decoration: none; }
-a:hover, a:active { 
-    text-decoration: none; 
+p:hover,
+a:hover { 
     color: var(--hover-link);
 }
 
 .group {
-    width: 450px;
-    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .group-links {
+    width: 450px;
     display: flex;
-    align-content: flex-start;
     justify-content: space-evenly;
-    align-items: flex-start;
     column-gap: 20px;
     row-gap: 10px;
     flex-wrap: wrap;
