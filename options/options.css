@@ -21,6 +21,7 @@ textarea {
     border-color: #89b4fa;
     border-radius: 5px;
     resize: vertical;
+    padding: 5px;
 }
 
 button {
