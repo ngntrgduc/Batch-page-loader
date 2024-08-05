@@ -1,4 +1,4 @@
-# Multiple links loader ![](https://img.shields.io/github/manifest-json/v/ngntrgduc/Multiple-links-loader?style=flat-square)
+# Multiple links loader
 Open multiple links in a flash ⚡.
 
 ## What is this?
