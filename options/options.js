@@ -1,7 +1,10 @@
+const saveButton = document.getElementById('button');
+const optionsTextArea = document.getElementById('options');
+
 function loadOptions() {
     browser.storage.local.get('links', (data) => {
         if (data.links) {
-            document.getElementById('options').value = data.links.join('\n');
+            optionsTextArea.value = data.links.join('\n');
         }
     });
 }
@@ -11,33 +14,31 @@ function formatLink(link) {
 }
 
 function getLinks() {
-    let links = [];
-    let rawLinks = document.getElementById('options').value.split('\n');
-    for (let link of rawLinks) {
-        // console.log(link, link.length);
-        links.push(formatLink(link));
-    }
-    return links;
+    return optionsTextArea.value.split('\n').map(formatLink);
 }
 
-document.getElementById('button').addEventListener('click', () => {
-    document.getElementById('button').innerText = 'Saved';
+function saveOptions() {
+    saveButton.innerText = 'Saved';
+    const links = getLinks();
+    browser.storage.local.set({ 'links': links });
+}
 
-    let links = getLinks();
-
-    // Set new links on local storage
-    browser.storage.local.set({
-        'links': links
-    }, () => console.log('Links were saved.'));
-
-    // Load settings after set
+saveButton.addEventListener('click', () => {
+    saveOptions();
     loadOptions();
 });
 
 // Change button text when user type in textarea
-document.getElementById('options').addEventListener('input', () => {
-    document.getElementById('button').innerText = 'Save';
+optionsTextArea.addEventListener('input', () => {
+    saveButton.innerText = 'Save';
 });
 
-// Open options page
+document.addEventListener('keydown', (e) => {
+    if (e.key === 's' && e.ctrlKey) {
+        e.preventDefault();
+        saveOptions();
+        loadOptions();
+    }
+})
+
 loadOptions();
