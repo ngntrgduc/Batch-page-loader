@@ -1,6 +1,6 @@
 {
     "name": "Multiple links loader",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "description": "Open multiple links in a flash",
     "manifest_version": 3,
     "action": {
