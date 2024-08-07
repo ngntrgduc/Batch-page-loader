@@ -32,22 +32,17 @@ async function getDelay() {
 
 async function openTabsInGroup(group) {
     const links = Array.from(group.getElementsByTagName('a'));
-    console.log('links in group: ', links.length);
 
     try {
         const [limit, delay] = await Promise.all([getLimit(), getDelay()]);
-        console.log('limit', limit);
-        console.log('delay', delay);
 
         if (links.length > limit) {
-            console.log('Number of links exceed limit, open with delay');
             links.forEach((link, index) => {
                 setTimeout(() => {
                     browser.tabs.create({ url: link.href });
                 }, index * (delay * 1000));
             });
         } else {
-            console.log('Open with no delay');
             links.forEach(link => browser.tabs.create({ url: link.href }));
         }
     } catch (error) {
@@ -77,11 +72,9 @@ browser.storage.local.get('links', (data) => {
                 group.appendChild(groupName);
 
                 let j = i + 1;
-                // line = data.links[j];
                 while (j < data.links.length && isLink(data.links[j])) {
                     addLink(groupLinks, data.links[j]);
                     j++;
-                    // line = data.links[j];
                 }
 
                 group.appendChild(groupLinks);
