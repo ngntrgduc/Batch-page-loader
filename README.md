@@ -53,25 +53,25 @@ Here are the basic options:
 ```
 # Social
 Discord | https://discord.com/channels/@me
-Mathstodon | https://mathstodon.xyz/
 LinkedIn | https://www.linkedin.com/notifications/
 Twitter | https://twitter.com/home
 
 # News
-GitHub trending | https://github.com/trending
-Papers with code | https://paperswithcode.com/
 Hacker News | https://news.ycombinator.com/best
 The Verge | https://www.theverge.com/
+GitHub trending | https://github.com/trending
+Papers with code | https://paperswithcode.com/
 
-# Mailing
-Gmail | https://mail.google.com/mail/u/0/#inbox
+# Mail
 Outlook | https://outlook.office.com/mail/
+Gmail | https://mail.google.com/mail/u/0/#inbox
 ```
+
+You can also add delay (default: 1 second, ranged from 0 to 2) when opening tabs if the number of tabs in the group exceeds the limit (default: 4 tabs, ranged from 0 to 99). 
 
 ## Todo
 - [x] Find a new icon with more size
 - [ ] Comment feature in textarea
-- [ ] Add settings button on main page
 - [x] Add shortcut to open options page
 - [ ] More levels for group, group can contain other groups?
 
