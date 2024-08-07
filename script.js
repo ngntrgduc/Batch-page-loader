@@ -1,10 +1,14 @@
-function addLink(groupLinks, line) {
-    // The line have format: <name> | <link>
-    let name = line.split('|')[0].trim();
-    let url = line.split('|')[1].trim();
-    let link = document.createElement('a');
+function createLink(name, url) {
+    const link = document.createElement('a');
     link.href = url;
     link.textContent = name;
+    return link;
+}
+
+function addLink(groupLinks, line) {
+    // The line have format: <name> | <link>
+    const [name, url] = line.split('|').map(part => part.trim());
+    const link = createLink(name, url);
     groupLinks.appendChild(link);
 }
 
@@ -16,14 +20,39 @@ function isLink(line) {
     return line.length != 0 && !isGroupName(line);
 }
 
-function openTabsInGroup(group) {
+async function getLimit() {
+    const data = await browser.storage.local.get('limit');
+    return data.limit;
+}
+
+async function getDelay() {
+    const data = await browser.storage.local.get('delay');
+    return data.delay;
+}
+
+async function openTabsInGroup(group) {
     const links = Array.from(group.getElementsByTagName('a'));
-    const delay = 1000; // delay in milliseconds
-    links.forEach((link, index) => {
-        setTimeout(() => {
-            browser.tabs.create({ url: link.href });
-        }, index * delay);
-    });
+    console.log('links in group: ', links.length);
+
+    try {
+        const [limit, delay] = await Promise.all([getLimit(), getDelay()]);
+        console.log('limit', limit);
+        console.log('delay', delay);
+
+        if (links.length > limit) {
+            console.log('Number of links exceed limit, open with delay');
+            links.forEach((link, index) => {
+                setTimeout(() => {
+                    browser.tabs.create({ url: link.href });
+                }, index * (delay * 1000));
+            });
+        } else {
+            console.log('Open with no delay');
+            links.forEach(link => browser.tabs.create({ url: link.href }));
+        }
+    } catch (error) {
+        console.error('Error retrieving data:', error);
+    }
 }
 
 container = document.getElementById('main')
@@ -35,31 +64,30 @@ browser.storage.local.get('links', (data) => {
         let i = 0;
         while (i < data.links.length) {
             let line = data.links[i];
-    
             if (isGroupName(line)) {
-                let group = document.createElement('div');
+                const group = document.createElement('div');
                 group.classList.add('group');
 
-                let groupLinks = document.createElement('div');
+                const groupLinks = document.createElement('div');
                 groupLinks.classList.add('group-links');
                 
-                let groupName = document.createElement('p');
+                const groupName = document.createElement('p');
                 groupName.textContent = line.slice(1).trim();
                 groupName.onclick = () => openTabsInGroup(group);
                 group.appendChild(groupName);
 
                 let j = i + 1;
-                line = data.links[j];
-                while (j < data.links.length && isLink(line)) {
-                    addLink(groupLinks, line);
-                    j += 1;
-                    line = data.links[j];
+                // line = data.links[j];
+                while (j < data.links.length && isLink(data.links[j])) {
+                    addLink(groupLinks, data.links[j]);
+                    j++;
+                    // line = data.links[j];
                 }
 
                 group.appendChild(groupLinks);
                 container.appendChild(group);
             }
-            i += 1;
+            i++;
         }
     }
 });
