@@ -1,15 +1,10 @@
 # Multiple links loader
 Open multiple links in a flash ⚡.
 
-Extension available on [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/multiple-links-loader/).
-
-## Install from source
-1. Clone this repository/[download zip](https://github.com/ngntrgduc/Multiple-page-loader/archive/refs/heads/firefox.zip) and extract to a folder on your local machine.
-
 This extension can open a link when you click on it and multiple links when you click on the group name. Time-saver.
 
 ## Installation
-[![](https://extensionworkshop.com/assets/img/documentation/publish/get-the-addon-178x60px.dad84b42.png)](https://addons.mozilla.org/en-US/firefox/addon/multiple-links-loader/)
+Extension available on [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/multiple-links-loader/).
 
 ### Local
 
@@ -20,13 +15,12 @@ git clone https://github.com/ngntrgduc/Multiple-links-loader.git
 ```
 
 2. Load extension:
+   - **Chrome:**  `Settings` -> `Extensions`.
+   - **Edge:**    `Extensions` -> `Manage Extensions`.
 
-- **Chrome:**  `Settings` -> `Extensions`.
-- **Edge:**    `Extensions` -> `Manage Extensions`.
+   Then turn on `Developer mode`. Finally, click `Load unpacked` and select the folder you have just cloned/downloaded.
 
-Then turn on `Developer mode`. Finally, click `Load unpacked` and select the folder you have just cloned/downloaded.
-
-- **Firefox:** Go to `about:debugging`, click `Load Temporary Add-on...`, then select `manifest.json` in the `firefox` folder.
+   - **Firefox:** Go to `about:debugging`, click `Load Temporary Add-on...`, then select `manifest.json` in the `firefox` folder.
 
 ## How to use
 Open the extension's Options page, and paste your link with the following format:
