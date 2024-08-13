@@ -2,6 +2,13 @@ function createLink(name, url) {
     const link = document.createElement('a');
     link.href = url;
     link.textContent = name;
+    // Alt + Left Click to toggle ignore
+    link.addEventListener('click', (event) => {
+        if (event.altKey && event.button === 0) {
+            event.preventDefault();
+            link.classList.toggle('ignore');
+        }
+    });
     return link;
 }
 
@@ -39,11 +46,17 @@ async function openTabsInGroup(group) {
         if (links.length > limit) {
             links.forEach((link, index) => {
                 setTimeout(() => {
-                    browser.tabs.create({ url: link.href });
+                    if (!link.classList.contains('ignore')) {
+                        browser.tabs.create({ url: link.href });
+                    }
                 }, index * (delay * 1000));
             });
         } else {
-            links.forEach(link => browser.tabs.create({ url: link.href }));
+            links.forEach((link) => {
+                if (!link.classList.contains('ignore')) {
+                    browser.tabs.create({ url: link.href })
+                }
+            });
         }
     } catch (error) {
         console.error('Error retrieving data:', error);
