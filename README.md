@@ -11,7 +11,9 @@ A picture is worth a thousand words:
 This extension can open a link when you click on it and multiple links when you click on the group name. Time-saver.
 
 ## Installation
-**Note**: If you use Firefox, the extension is available on [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/multiple-links-loader/), or you can checkout [`firefox` branch](https://github.com/ngntrgduc/Multiple-links-loader/tree/firefox) for local installation.
+[![](https://extensionworkshop.com/assets/img/documentation/publish/get-the-addon-178x60px.dad84b42.png)](https://addons.mozilla.org/en-US/firefox/addon/multiple-links-loader/)
+
+### Local
 
 1. Clone this repository/[download zip](https://github.com/ngntrgduc/Multiple-links-loader/archive/refs/heads/master.zip) and extract to a folder on your local machine.
 
@@ -26,11 +28,7 @@ git clone https://github.com/ngntrgduc/Multiple-links-loader.git
 
 Then turn on `Developer mode`. Finally, click `Load unpacked` and select the folder you have just cloned/downloaded.
 
-3. 
-   - Make the extension more visible by `Pin` (Chrome)/`Show in toolbar` (Edge). 
-   - Change shortcut in `Keyboard shortcuts` if needed.
-
-4. Enjoy ✨. 
+- **Firefox:** Go to `about:debugging`, click `Load Temporary Add-on...`, then select `manifest.json` in the `firefox` folder.
 
 ## How to use
 Open the extension's Options page, and paste your link with the following format:
@@ -74,6 +72,7 @@ Gmail | https://mail.google.com/mail/u/0/#inbox
 - [ ] Comment feature in textarea
 - [x] Add shortcut to open options page
 - [ ] More levels for group, group can contain other groups?
+- [x] Alt + click to termporary disable/ignore link when open tabs in group
 
 ## Contributing
 If you found a bug or want to contribute, feel free to open an issue/pull requests. All contributions are welcomed.
