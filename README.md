@@ -48,6 +48,8 @@ Outlook | https://outlook.office.com/mail/
 Gmail | https://mail.google.com/mail/u/0/#inbox
 ```
 
+You can also toggle ignore tabs by Alt + Left click. When opening a group, ignored tabs won't open.
+
 **Firefox only**: You can also add delay (default: 1 second, ranged from 0 to 2) when opening tabs if the number of tabs in the group exceeds the limit (default: 4 tabs, ranged from 0 to 99). 
 
 ## Todo
