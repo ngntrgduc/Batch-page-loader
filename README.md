@@ -29,15 +29,6 @@ Open the extension's Options page, and paste your link with the following format
 <name> | <link>
 ```
 
-2. Load extension on Firefox:
-Go to `about:debugging`, click `Load Temporary Add-on...`, then select `manifest.json` of the folder you have just cloned/downloaded.
-
-3. 
-   - Make the extension more visible by `Pin to Toolbar`. 
-   - Change shortcut if needed.
-
-and after that, put links under the group name
-
 Here are the basic options:
 
 ```
