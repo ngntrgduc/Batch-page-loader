@@ -38,12 +38,11 @@ container = document.getElementById('main')
 
 chrome.storage.local.get('links', (data) => {
     if (!data.links) {
-        chrome.runtime.openOptionsPage();
+        browser.runtime.openOptionsPage();
     } else {
         let i = 0;
         while (i < data.links.length) {
             let line = data.links[i];
-    
             if (isGroupName(line)) {
                 let group = document.createElement('div');
                 group.classList.add('group');
@@ -57,17 +56,15 @@ chrome.storage.local.get('links', (data) => {
                 group.appendChild(groupName);
 
                 let j = i + 1;
-                line = data.links[j];
-                while (j < data.links.length && isLink(line)) {
-                    addLink(groupLinks, line);
-                    j += 1;
-                    line = data.links[j];
+                while (j < data.links.length && isLink(data.links[j])) {
+                    addLink(groupLinks, data.links[j]);
+                    j++;
                 }
 
                 group.appendChild(groupLinks);
                 container.appendChild(group);
             }
-            i += 1;
+            i++;
         }
     }
 });

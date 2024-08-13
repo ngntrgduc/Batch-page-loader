@@ -1,12 +1,10 @@
 # Multiple links loader
 Open multiple links in a flash ⚡.
 
-## What is this?
-A picture is worth a thousand words:
+Extension available on [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/multiple-links-loader/).
 
-| Start page | Options page |
-|:---:|:---:|
-|![](/images/page.png) | ![](/images/options.png) |
+## Install from source
+1. Clone this repository/[download zip](https://github.com/ngntrgduc/Multiple-page-loader/archive/refs/heads/firefox.zip) and extract to a folder on your local machine.
 
 This extension can open a link when you click on it and multiple links when you click on the group name. Time-saver.
 
@@ -37,12 +35,12 @@ Open the extension's Options page, and paste your link with the following format
 <name> | <link>
 ```
 
-When you want to open the link, click on the name of it.
-If you want to group multiple links, put the group name in the following format:
+2. Load extension on Firefox:
+Go to `about:debugging`, click `Load Temporary Add-on...`, then select `manifest.json` of the folder you have just cloned/downloaded.
 
-```
-# <group name>
-```
+3. 
+   - Make the extension more visible by `Pin to Toolbar`. 
+   - Change shortcut if needed.
 
 and after that, put links under the group name
 
