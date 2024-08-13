@@ -5,6 +5,13 @@ function addLink(groupLinks, line) {
     let link = document.createElement('a');
     link.href = url;
     link.textContent = name;
+    // Alt + Left Click to toggle ignore
+    link.addEventListener('click', (event) => {
+        if (event.altKey && event.button === 0) {
+            event.preventDefault();
+            link.classList.toggle('ignore');
+        }
+    });
     groupLinks.appendChild(link);
 }
 
@@ -18,11 +25,12 @@ function isLink(line) {
 
 function openTabsInGroup(group) {
     const links = Array.from(group.getElementsByTagName('a'));
-    const delay = 1000; // delay in milliseconds
-    links.forEach((link, index) => {
-        setTimeout(() => {
+    // const delay = 1000; // delay in milliseconds
+    links.forEach((link) => {
+        if (!link.classList.contains('ignore')) {
             chrome.tabs.create({ url: link.href });
-        }, index * delay);
+        }
+        // chrome.tabs.create({ url: link.href });
     });
 }
 

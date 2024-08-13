@@ -56,3 +56,11 @@ a:hover {
     row-gap: 10px;
     flex-wrap: wrap;
 }
+
+.ignore {
+    opacity: 0.3;
+}
+
+.ignore:hover {
+    opacity: 0.8;
+}
