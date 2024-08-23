@@ -23,7 +23,7 @@ git clone https://github.com/ngntrgduc/Multiple-links-loader.git
    - **Firefox:** Go to `about:debugging`, click `Load Temporary Add-on...`, then select `manifest.json` in the `firefox` folder.
 
 ## How to use
-Open the extension's Options page, and paste your link with the following format:
+Open the extension's Options page using `Alt` + `Shift` + `L`, and paste your link with the following format:
 
 ```
 <name> | <link>
@@ -48,7 +48,7 @@ Outlook | https://outlook.office.com/mail/
 Gmail | https://mail.google.com/mail/u/0/#inbox
 ```
 
-You can also toggle ignore tabs by Alt + Left click. When opening a group, ignored tabs won't open.
+Use `Alt` + `L` to open the extension main page. You can also toggle ignore tabs by `Alt` + `Left click`. When opening a group, ignored tabs won't open.
 
 **Firefox only**: You can also add delay (default: 1 second, ranged from 0 to 2) when opening tabs if the number of tabs in the group exceeds the limit (default: 4 tabs, ranged from 0 to 99). 
 
@@ -58,6 +58,7 @@ You can also toggle ignore tabs by Alt + Left click. When opening a group, ignor
 - [x] Add shortcut to open options page
 - [ ] More levels for group, group can contain other groups?
 - [x] Alt + click to termporary disable/ignore link when open tabs in group
+- [ ] Options to change theme/colors on the main page
 
 ## Contributing
 If you found a bug or want to contribute, feel free to open an issue/pull requests. All contributions are welcomed.
