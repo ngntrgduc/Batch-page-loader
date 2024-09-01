@@ -58,6 +58,7 @@ Use `Alt` + `L` to open the extension main page. You can also toggle ignore tabs
 - [x] Add shortcut to open options page
 - [ ] More levels for group, group can contain other groups?
 - [x] Alt + click to termporary disable/ignore link when open tabs in group
+   - [ ] Pernamently disable?
 - [ ] Options to change theme/colors on the main page
 
 ## Contributing
