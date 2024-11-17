@@ -34,11 +34,6 @@
         "storage"
     ],
     "background": {
-        "scripts": ["background.js"]
-    },
-	    "browser_specific_settings": {
-        "gecko": {
-          "id": "ngntrgduc@MultipleLinksLoader"
-        }
+        "service_worker": "background.js"
     }
 }

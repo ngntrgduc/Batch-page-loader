@@ -38,7 +38,7 @@ container = document.getElementById('main')
 
 chrome.storage.local.get('links', (data) => {
     if (!data.links) {
-        browser.runtime.openOptionsPage();
+        chrome.runtime.openOptionsPage();
     } else {
         let i = 0;
         while (i < data.links.length) {
