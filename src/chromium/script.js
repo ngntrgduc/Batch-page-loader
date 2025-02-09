@@ -23,14 +23,13 @@ function isLink(line) {
     return line.length != 0 && !isGroupName(line);
 }
 
-function openTabsInGroup(group) {
+function openTabsInGroup(group, inBackground = false) {
     const links = Array.from(group.getElementsByTagName('a'));
-    // const delay = 1000; // delay in milliseconds
     links.forEach((link) => {
         if (!link.classList.contains('ignore')) {
-            chrome.tabs.create({ url: link.href });
+            if (!inBackground) chrome.tabs.create({ url: link.href });
+            else chrome.tabs.create({ url: link.href, active: false }); 
         }
-        // chrome.tabs.create({ url: link.href });
     });
 }
 
@@ -52,7 +51,14 @@ chrome.storage.local.get('links', (data) => {
                 
                 let groupName = document.createElement('p');
                 groupName.textContent = line.slice(1).trim();
-                groupName.onclick = () => openTabsInGroup(group);
+                groupName.addEventListener('mousedown', (event) => {
+                    if (event.button === 0) { // Left Click: Open tabs normally
+                        openTabsInGroup(group);
+                    } else if (event.button === 1) { // Middle Click: Open tabs in background
+                        event.preventDefault();
+                        openTabsInGroup(group, inBackground = true);
+                    }
+                });
                 group.appendChild(groupName);
 
                 let j = i + 1;

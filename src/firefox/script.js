@@ -37,24 +37,26 @@ async function getDelay() {
     return data.delay;
 }
 
-async function openTabsInGroup(group) {
+async function openTabsInGroup(group, inBackground = false) {
     const links = Array.from(group.getElementsByTagName('a'));
 
     try {
         const [limit, delay] = await Promise.all([getLimit(), getDelay()]);
-
+        const delayInMilisecond = delay * 1000
         if (links.length > limit) {
             links.forEach((link, index) => {
                 setTimeout(() => {
                     if (!link.classList.contains('ignore')) {
-                        browser.tabs.create({ url: link.href });
+                        if (!inBackground) browser.tabs.create({ url: link.href });
+                        else browser.tabs.create({ url: link.href, active: false }); 
                     }
-                }, index * (delay * 1000));
+                }, index * (delayInMilisecond));
             });
         } else {
             links.forEach((link) => {
                 if (!link.classList.contains('ignore')) {
-                    browser.tabs.create({ url: link.href })
+                    if (!inBackground) browser.tabs.create({ url: link.href })
+                    else browser.tabs.create({ url: link.href, active: false }); 
                 }
             });
         }
@@ -81,7 +83,14 @@ browser.storage.local.get('links', (data) => {
                 
                 const groupName = document.createElement('p');
                 groupName.textContent = line.slice(1).trim();
-                groupName.onclick = () => openTabsInGroup(group);
+                groupName.addEventListener('mousedown', (event) => {
+                    if (event.button === 0) { // Left Click: Open tabs normally
+                        openTabsInGroup(group);
+                    } else if (event.button === 1) { // Middle Click: Open tabs in background
+                        event.preventDefault();
+                        openTabsInGroup(group, inBackground = true);
+                    }
+                });
                 group.appendChild(groupName);
 
                 let j = i + 1;
